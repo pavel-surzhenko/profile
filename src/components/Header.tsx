@@ -12,12 +12,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const drawerWidth: number = 240;
-const navItems: string[] = ['Home', 'Skills', 'Projects', 'Contact', 'Resume'];
+const navItems: string[] = ['home', 'skills', 'projects', 'contacts', 'resume'];
 
 export const Header: React.FC = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -31,6 +33,7 @@ export const Header: React.FC = () => {
             <Typography
                 variant='h6'
                 sx={{ my: 2 }}
+                onClick={() => navigate('/')}
             >
                 PORTFOLIO
             </Typography>
@@ -41,8 +44,12 @@ export const Header: React.FC = () => {
                         key={item}
                         disablePadding
                     >
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                        <ListItemButton
+                            component={NavLink}
+                            to={item}
+                            sx={{ textAlign: 'center' }}
+                        >
+                            <ListItemText primary={item.toUpperCase()} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -52,7 +59,10 @@ export const Header: React.FC = () => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component='nav'>
+            <AppBar
+                position='relative'
+                component='nav'
+            >
                 <Toolbar>
                     <IconButton
                         color='inherit'
@@ -71,13 +81,16 @@ export const Header: React.FC = () => {
                             display: { xs: 'none', sm: 'block' },
                             fontWeight: 600,
                         }}
+                        onClick={() => navigate('/')}
                     >
                         PORTFOLIO
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button
+                                component={NavLink}
                                 key={item}
+                                to={item === 'home' ? '/' : item}
                                 sx={{ color: 'text.primary' }}
                             >
                                 {item}

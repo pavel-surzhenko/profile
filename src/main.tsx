@@ -1,7 +1,8 @@
 import { createTheme, CssBaseline, Theme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App';
+import { router } from './routes';
+import { RouterProvider } from 'react-router-dom';
 
 const theme: Theme = createTheme({
     palette: {
@@ -16,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <App />
+            <RouterProvider router={router} />
         </ThemeProvider>
     </React.StrictMode>
 );
