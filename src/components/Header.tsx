@@ -13,17 +13,17 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const drawerWidth = 240;
-const navItems = ['Home', 'Skills', 'Projects', 'Contact', 'Resume'];
+const drawerWidth: number = 240;
+const navItems: string[] = ['Home', 'Skills', 'Projects', 'Contact', 'Resume'];
 
-export const Header = () => {
+export const Header: React.FC = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const drawer = (
+    const drawerJSX: JSX.Element = (
         <Box
             onClick={handleDrawerToggle}
             sx={{ textAlign: 'center' }}
@@ -32,7 +32,7 @@ export const Header = () => {
                 variant='h6'
                 sx={{ my: 2 }}
             >
-                Portfolio
+                PORTFOLIO
             </Typography>
             <Divider />
             <List>
@@ -64,20 +64,21 @@ export const Header = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography
-                        variant='h6'
+                        variant='h5'
                         component='div'
                         sx={{
                             flexGrow: 1,
                             display: { xs: 'none', sm: 'block' },
+                            fontWeight: 600,
                         }}
                     >
-                        Portfolio
+                        PORTFOLIO
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button
                                 key={item}
-                                sx={{ color: '#fff' }}
+                                sx={{ color: 'text.primary' }}
                             >
                                 {item}
                             </Button>
@@ -101,9 +102,9 @@ export const Header = () => {
                         },
                     }}
                 >
-                    {drawer}
+                    {drawerJSX}
                 </Drawer>
             </Box>
         </Box>
     );
-}
+};
