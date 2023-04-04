@@ -46,8 +46,14 @@ export const Header: React.FC = () => {
                     >
                         <ListItemButton
                             component={NavLink}
-                            to={item}
-                            sx={{ textAlign: 'center' }}
+                            to={item === 'home' ? '/' : item}
+                            sx={{
+                                textAlign: 'center',
+                                '&.active': {
+                                    backgroundColor:
+                                        'rgba(144, 202, 249, 0.08)',
+                                },
+                            }}
                         >
                             <ListItemText primary={item.toUpperCase()} />
                         </ListItemButton>
@@ -91,7 +97,13 @@ export const Header: React.FC = () => {
                                 component={NavLink}
                                 key={item}
                                 to={item === 'home' ? '/' : item}
-                                sx={{ color: 'text.primary' }}
+                                sx={{
+                                    color: 'text.primary',
+                                    '&.active': {
+                                        backgroundColor:
+                                            'rgba(144, 202, 249, 0.08)',
+                                    },
+                                }}
                             >
                                 {item}
                             </Button>

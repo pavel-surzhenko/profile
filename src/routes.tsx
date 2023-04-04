@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { App } from './App';
 
 import { ContactsPage, HomePage, ProjectsPage, SkillsPage } from './pages';
@@ -23,6 +23,15 @@ export const router = createBrowserRouter([
             {
                 path: '/contacts',
                 element: <ContactsPage />,
+            },
+            {
+                path: '*',
+                element: (
+                    <Navigate
+                        to='/'
+                        replace
+                    />
+                ),
             },
         ],
     },
