@@ -104,6 +104,7 @@ export const Header: React.FC = () => {
                                             'rgba(144, 202, 249, 0.08)',
                                     },
                                 }}
+                                size='large'
                             >
                                 {item}
                             </Button>
