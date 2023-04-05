@@ -1,18 +1,20 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import {
+    Button,
+    Typography,
+    Toolbar,
+    ListItemText,
+    ListItemButton,
+    ListItem,
+    List,
+    Drawer,
+    Divider,
+    Box,
+    AppBar,
+    IconButton,
+} from '@mui/material';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { DownloadRounded, Menu } from '@mui/icons-material';
 
 const drawerWidth: number = 240;
 const navItems: string[] = ['home', 'skills', 'projects', 'contacts', 'resume'];
@@ -46,7 +48,13 @@ export const Header: React.FC = () => {
                     >
                         <ListItemButton
                             component={NavLink}
-                            to={item === 'home' ? '/' : item}
+                            to={
+                                item === 'home'
+                                    ? '/'
+                                    : item === 'resume'
+                                    ? 'https://drive.google.com/uc?export=download&id=1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL'
+                                    : item
+                            }
                             sx={{
                                 textAlign: 'center',
                                 '&.active': {
@@ -55,7 +63,10 @@ export const Header: React.FC = () => {
                                 },
                             }}
                         >
-                            <ListItemText primary={item.toUpperCase()} />
+                            <ListItemText
+                                primary={item.toUpperCase()}
+                                disableTypography
+                            />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -77,7 +88,7 @@ export const Header: React.FC = () => {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
-                        <MenuIcon />
+                        <Menu />
                     </IconButton>
                     <Typography
                         variant='h5'
@@ -97,7 +108,13 @@ export const Header: React.FC = () => {
                             <Button
                                 component={NavLink}
                                 key={item}
-                                to={item === 'home' ? '/' : item}
+                                to={
+                                    item === 'home'
+                                        ? '/'
+                                        : item === 'resume'
+                                        ? 'https://drive.google.com/uc?export=download&id=1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL'
+                                        : item
+                                }
                                 sx={{
                                     color: 'text.primary',
                                     '&.active': {
@@ -107,7 +124,8 @@ export const Header: React.FC = () => {
                                 }}
                                 size='large'
                             >
-                                {item}
+                                {item}{' '}
+                                {item === 'resume' && <DownloadRounded />}
                             </Button>
                         ))}
                     </Box>
