@@ -7,14 +7,15 @@ export const Footer: React.FC = () => {
         <Box
             component='footer'
             sx={{
-                position: 'fixed',
-                bottom: 0,
+                flex: '0 0 auto',
                 width: '100%',
                 py: 3,
                 px: 2,
                 mt: 'auto',
+                backgroundColor: 'background.paper',
                 backgroundImage:
                     'linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))',
+                zIndex: 2,
             }}
         >
             <Typography
