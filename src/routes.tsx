@@ -1,7 +1,13 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { App } from './App';
 
-import { ContactsPage, HomePage, ProjectsPage, SkillsPage } from './pages';
+import {
+    ContactsPage,
+    HomePage,
+    ProjectsPage,
+    ResumePage,
+    SkillsPage,
+} from './pages';
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: '/contacts',
                 element: <ContactsPage />,
+            },
+            {
+                path: '/resume',
+                element: <ResumePage />,
             },
             {
                 path: '*',

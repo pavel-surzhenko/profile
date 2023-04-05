@@ -86,6 +86,7 @@ export const Header: React.FC = () => {
                             flexGrow: 1,
                             display: { xs: 'none', sm: 'block' },
                             fontWeight: 600,
+                            cursor: 'pointer',
                         }}
                         onClick={() => navigate('/')}
                     >
