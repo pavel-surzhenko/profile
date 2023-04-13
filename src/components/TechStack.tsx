@@ -1,37 +1,50 @@
-import { Box, Card, CardMedia, Typography, Grid } from '@mui/material';
+import {
+    Box,
+    Card,
+    CardMedia,
+    Typography,
+    Grid,
+    CircularProgress,
+} from '@mui/material';
+import Image from 'mui-image';
 import data from '../data/data.json';
 import { TypeAnimation } from 'react-type-animation';
 import image from '../theme/image/skills.svg';
+import { useState } from 'react';
 
 export const TechStack: React.FC = () => {
+    const [showNextText, setShowNextText] = useState(false);
+
     const skillsJSX: JSX.Element[] = data.icons.map((skill) => (
         <Grid
+            key={skill.name}
             item
-            xs={4}
+            xs={3}
             sm={3}
         >
-            <Card
-                key={skill.name}
-                sx={{
-                    backgroundImage: 'none',
-                    boxShadow: 'none',
-                    maxWidth: '100px',
-                }}
-            >
-                <CardMedia
-                    component='img'
-                    image={skill.icon}
-                    title={skill.name}
-                />
-                <Typography
-                    textAlign='center'
-                    color='text.secondary'
-                    variant='subtitle1'
-                    pt='5px'
-                >
-                    {skill.name}
-                </Typography>
-            </Card>
+            {showNextText && (
+                <>
+                    <Image
+                        src={skill.icon}
+                        fit='contain'
+                        duration={1000}
+                        shift='top'
+                        sx={{
+                            maxWidth: { xs: '75px', sm: '100px' },
+                            maxHeight: { xs: '75px', sm: '100px' },
+                        }}
+                        showLoading={<CircularProgress color='primary' />}
+                    />
+                    <Typography
+                        textAlign='center'
+                        color='text.secondary'
+                        variant='subtitle1'
+                        py='5px'
+                    >
+                        {skill.name}
+                    </Typography>
+                </>
+            )}
         </Grid>
     ));
 
@@ -43,7 +56,11 @@ export const TechStack: React.FC = () => {
                 textAlign='center'
             >
                 <TypeAnimation
-                    sequence={[300, 'My technical skills']}
+                    sequence={[
+                        300,
+                        'My technical skills',
+                        () => setShowNextText(true),
+                    ]}
                     speed={{ type: 'keyStrokeDelayInMs', value: 50 }}
                 />
             </Typography>
@@ -56,14 +73,14 @@ export const TechStack: React.FC = () => {
                     flexDirection: { xs: 'column', sm: 'row' },
                 }}
             >
-                <Box sx={{ flexBasis: '50%' }}>
-                    <Card sx={{ backgroundImage: 'none', boxShadow: 'none' }}>
-                        <CardMedia
-                            sx={{ maxHeight: '700px', objectFit: 'contain' }}
-                            component='img'
-                            image={image}
-                        />
-                    </Card>
+                <Box sx={{ flexBasis: '50%', order: { xs: '2', sm: '1' } }}>
+                    <Image
+                        sx={{ maxHeight: '700px' }}
+                        src={image}
+                        fit='contain'
+                        duration={1000}
+                        shift='left'
+                    />
                 </Box>
                 <Box sx={{ flexBasis: '50%' }}>
                     <Grid
