@@ -1,0 +1,60 @@
+{
+    "icons": [
+        {
+            "name": "html5",
+            "icon": "src/theme/icons/html5.svg"
+        },
+        {
+            "name": "css3",
+            "icon": "src/theme/icons/css3.svg"
+        },
+        {
+            "name": "javascript",
+            "icon": "src/theme/icons/javascript.svg"
+        },
+        {
+            "name": "typescript",
+            "icon": "src/theme/icons/typescript.svg"
+        },
+        {
+            "name": "react",
+            "icon": "src/theme/icons/react.svg"
+        },
+        {
+            "name": "redux",
+            "icon": "src/theme/icons/redux.svg"
+        },
+        {
+            "name": "sass",
+            "icon": "src/theme/icons/sass.svg"
+        },
+        {
+            "name": "bootstrap",
+            "icon": "src/theme/icons/bootstrap.svg"
+        },
+        {
+            "name": "material-ui",
+            "icon": "src/theme/icons/material-ui.svg"
+        },
+        {
+            "name": "jQuery",
+            "icon": "src/theme/icons/jquery.svg"
+        },
+        {
+            "name": "git",
+            "icon": "src/theme/icons/git.svg"
+        },
+        {
+            "name": "github",
+            "icon": "src/theme/icons/github.svg"
+        },
+        {
+            "name": "gitlab",
+            "icon": "src/theme/icons/gitlab.svg"
+        },
+        {
+            "name": "figma",
+            "icon": "src/theme/icons/figma.svg"
+        }
+    ]
+}

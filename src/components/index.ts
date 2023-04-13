@@ -1,4 +1,5 @@
 export { Header } from './Header'
 export { Footer } from './Footer'
 export { About } from './About'
-export { GitHubStat }  from './GitHubStat'
+export { GitHubStat } from './GitHubStat'
+export { TechStack } from './TechStack'
