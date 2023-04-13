@@ -5,7 +5,7 @@ export const HomePage: React.FC = () => {
     return (
         <Container
             maxWidth='xl'
-            sx={{ flex: '1 0 auto', mb: '20px' }}
+            sx={{ flex: '1 0 auto', mb: '50px' }}
         >
             <About />
             <GitHubStat />

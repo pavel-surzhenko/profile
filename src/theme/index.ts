@@ -1,11 +1,11 @@
-import { createTheme, Theme } from '@mui/material';
+import { createTheme, Theme, responsiveFontSizes, useMediaQuery } from '@mui/material';
 
 export const colorTheme: ColorTheme = {
     light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
     dark: ['#ffefef', '#ff7d88', '#ff525d', '#f0323d', '#e50914'],
 };
 
-export const theme: Theme = createTheme({
+export let theme: Theme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: {
@@ -31,6 +31,8 @@ export const theme: Theme = createTheme({
         },
     },
 });
+
+theme = responsiveFontSizes(theme)
 
 interface ColorTheme {
     light: [string, string, string, string, string];

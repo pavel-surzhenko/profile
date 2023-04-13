@@ -1,8 +1,11 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import GitHubCalendar from 'react-github-calendar';
 import { colorTheme } from '../theme';
 
 export const GitHubStat: React.FC = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
+
     return (
         <Box>
             <Typography
@@ -21,6 +24,7 @@ export const GitHubStat: React.FC = () => {
                 fontSize={16}
                 theme={colorTheme}
                 style={{ margin: 'auto' }}
+                hideColorLegend={!isMobile}
             />
         </Box>
     );
