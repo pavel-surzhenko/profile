@@ -33,7 +33,7 @@ export const TechStack: React.FC = () => {
                             maxWidth: { xs: '75px', sm: '100px' },
                             maxHeight: { xs: '75px', sm: '100px' },
                         }}
-                        showLoading={<CircularProgress color='primary' />}
+                        showLoading={<CircularProgress color='error' />}
                     />
                     <Typography
                         textAlign='center'
@@ -57,11 +57,11 @@ export const TechStack: React.FC = () => {
             >
                 <TypeAnimation
                     sequence={[
-                        300,
+                        200,
                         'My technical skills',
                         () => setShowNextText(true),
                     ]}
-                    speed={{ type: 'keyStrokeDelayInMs', value: 50 }}
+                    speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
                 />
             </Typography>
             <Box
@@ -74,13 +74,15 @@ export const TechStack: React.FC = () => {
                 }}
             >
                 <Box sx={{ flexBasis: '50%', order: { xs: '2', sm: '1' } }}>
-                    <Image
-                        sx={{ maxHeight: '700px' }}
-                        src={image}
-                        fit='contain'
-                        duration={1000}
-                        shift='left'
-                    />
+                    {showNextText && (
+                        <Image
+                            sx={{ maxHeight: '700px' }}
+                            src={image}
+                            fit='contain'
+                            duration={1000}
+                            shift='left'
+                        />
+                    )}
                 </Box>
                 <Box sx={{ flexBasis: '50%' }}>
                     <Grid
