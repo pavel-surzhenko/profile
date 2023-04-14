@@ -30,7 +30,7 @@ export const ProjectList: React.FC = () => {
             {showNextText && (
                 <Grid
                     container
-                    spacing={3}
+                    spacing={5}
                 >
                     {projectsJSX}
                 </Grid>
