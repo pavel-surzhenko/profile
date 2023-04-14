@@ -1,10 +1,9 @@
 import {
     Box,
-    Card,
-    CardMedia,
     Typography,
     Grid,
     CircularProgress,
+    useTheme,
 } from '@mui/material';
 import Image from 'mui-image';
 import data from '../data/data.json';
@@ -14,6 +13,7 @@ import { useState } from 'react';
 
 export const TechStack: React.FC = () => {
     const [showNextText, setShowNextText] = useState(false);
+    const theme = useTheme();
 
     const skillsJSX: JSX.Element[] = data.icons.map((skill) => (
         <Grid
@@ -32,6 +32,9 @@ export const TechStack: React.FC = () => {
                         sx={{
                             maxWidth: { xs: '75px', sm: '100px' },
                             maxHeight: { xs: '75px', sm: '100px' },
+                            '&:hover': {
+                                transform: 'scale(1.2)',
+                            },
                         }}
                         showLoading={<CircularProgress color='error' />}
                     />
