@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import GitHubCalendar from 'react-github-calendar';
-import { colorTheme } from '../theme';
+import { colorTheme } from '../assets';
 
 export const GitHubStat: React.FC = () => {
     const theme = useTheme();

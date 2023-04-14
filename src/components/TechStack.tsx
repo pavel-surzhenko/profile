@@ -8,12 +8,11 @@ import {
 import Image from 'mui-image';
 import data from '../data/data.json';
 import { TypeAnimation } from 'react-type-animation';
-import image from '../theme/image/skills.svg';
+import image from '../assets/image/skills.svg';
 import { useState } from 'react';
 
 export const TechStack: React.FC = () => {
     const [showNextText, setShowNextText] = useState(false);
-    const theme = useTheme();
 
     const skillsJSX: JSX.Element[] = data.icons.map((skill) => (
         <Grid
@@ -84,6 +83,7 @@ export const TechStack: React.FC = () => {
                             fit='contain'
                             duration={1000}
                             shift='left'
+                            shiftDuration={1500}
                         />
                     )}
                 </Box>

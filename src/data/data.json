@@ -2,59 +2,103 @@
     "icons": [
         {
             "name": "html5",
-            "icon": "src/theme/icons/html5.svg"
+            "icon": "src/assets/icons/html5.svg"
         },
         {
             "name": "css3",
-            "icon": "src/theme/icons/css3.svg"
+            "icon": "src/assets/icons/css3.svg"
         },
         {
             "name": "javascript",
-            "icon": "src/theme/icons/javascript.svg"
+            "icon": "src/assets/icons/javascript.svg"
         },
         {
             "name": "typescript",
-            "icon": "src/theme/icons/typescript.svg"
+            "icon": "src/assets/icons/typescript.svg"
         },
         {
             "name": "react",
-            "icon": "src/theme/icons/react.svg"
+            "icon": "src/assets/icons/react.svg"
         },
         {
             "name": "redux",
-            "icon": "src/theme/icons/redux.svg"
+            "icon": "src/assets/icons/redux.svg"
         },
         {
             "name": "sass",
-            "icon": "src/theme/icons/sass.svg"
+            "icon": "src/assets/icons/sass.svg"
         },
         {
             "name": "bootstrap",
-            "icon": "src/theme/icons/bootstrap.svg"
+            "icon": "src/assets/icons/bootstrap.svg"
         },
         {
             "name": "material-ui",
-            "icon": "src/theme/icons/material-ui.svg"
+            "icon": "src/assets/icons/material-ui.svg"
         },
         {
             "name": "jQuery",
-            "icon": "src/theme/icons/jquery.svg"
+            "icon": "src/assets/icons/jquery.svg"
         },
         {
             "name": "git",
-            "icon": "src/theme/icons/git.svg"
+            "icon": "src/assets/icons/git.svg"
         },
         {
             "name": "github",
-            "icon": "src/theme/icons/github.svg"
+            "icon": "src/assets/icons/github.svg"
         },
         {
             "name": "gitlab",
-            "icon": "src/theme/icons/gitlab.svg"
+            "icon": "src/assets/icons/gitlab.svg"
         },
         {
             "name": "figma",
-            "icon": "src/theme/icons/figma.svg"
+            "icon": "src/assets/icons/figma.svg"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Web Store",
+            "code": "https://github.com/pavel-surzhenko/e-shop",
+            "live": "https://pavel-surzhenko.github.io/e-shop/",
+            "imagePC": "src/assets/image/projects/webStorePC.png",
+            "imageMob": "src/assets/image/projects/webStoreMob.png",
+            "description": "This is my project 'web store'. Has full functionality such as product filter, search by name, sorting, shopping cart and checkout page with data validation.",
+            "made": [
+                "src/assets/icons/typescript.svg",
+                "src/assets/icons/react.svg",
+                "src/assets/icons/redux.svg",
+                "src/assets/icons/material-ui.svg"
+            ]
+        },
+        {
+            "name": "Web Store",
+            "code": "https://github.com/pavel-surzhenko/e-shop",
+            "live": "https://pavel-surzhenko.github.io/e-shop/",
+            "imagePC": "src/assets/image/projects/webStorePC.png",
+            "imageMob": "src/assets/image/projects/webStoreMob.png",
+            "description": "This is my project 'web store'. Has full functionality such as product filter, search by name, sorting, shopping cart and checkout page with data validation.",
+            "made": [
+                "src/assets/icons/typescript.svg",
+                "src/assets/icons/react.svg",
+                "src/assets/icons/redux.svg",
+                "src/assets/icons/material-ui.svg"
+            ]
+        },
+        {
+            "name": "Web Store",
+            "code": "https://github.com/pavel-surzhenko/e-shop",
+            "live": "https://pavel-surzhenko.github.io/e-shop/",
+            "imagePC": "src/assets/image/projects/webStorePC.png",
+            "imageMob": "src/assets/image/projects/webStoreMob.png",
+            "description": "This is my project 'web store'. Has full functionality such as product filter, search by name, sorting, shopping cart and checkout page with data validation ",
+            "made": [
+                "src/assets/icons/typescript.svg",
+                "src/assets/icons/react.svg",
+                "src/assets/icons/redux.svg",
+                "src/assets/icons/material-ui.svg"
+            ]
         }
     ]
 }
