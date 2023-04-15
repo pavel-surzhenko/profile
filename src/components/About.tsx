@@ -28,7 +28,7 @@ export const About: React.FC = () => {
                         sequence={[
                             1000,
                             'I`am Pablo',
-                            1000,
+                            500,
                             'I`am Pavlo',
                             () => setShowNextText(true),
                         ]}

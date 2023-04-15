@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Project } from './Project';
 import data from '../data/data.json';
-import Image from 'mui-image';
 import image from '../assets/image/project.svg';
 
 export const ProjectList: React.FC = () => {
