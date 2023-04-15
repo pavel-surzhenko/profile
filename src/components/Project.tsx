@@ -39,17 +39,28 @@ export const Project: React.FC<IProjectProps> = (props) => {
                     },
                     transition: 'all 0.3s linear',
                     boxShadow: '0 3px 3px 2px rgba(229, 9, 20, 0.200)',
+                    height: '100%',
                 }}
                 onMouseEnter={() => setElevation(6)}
                 onMouseLeave={() => setElevation(2)}
             >
-                <Box p={3}>
-                    <Box pb={2}>
+                <Box
+                    p={3}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                    }}
+                >
+                    <Box
+                        pb={2}
+                        sx={{ position: 'relative' }}
+                    >
                         <Image
                             fit='contain'
                             duration={1000}
                             shift='top'
-                            src={props.imagePC}
+                            src={props.image}
                             sx={{ borderRadius: '4px' }}
                             showLoading={<CircularProgress color='error' />}
                         />
@@ -81,6 +92,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
                         variant='subtitle1'
                         color='text.secondary'
                         pb={2}
+                        sx={{ flex: '1' }}
                     >
                         {props.description}
                     </Typography>
@@ -91,6 +103,8 @@ export const Project: React.FC<IProjectProps> = (props) => {
                             width: '75%',
                             m: '0 auto',
                             gap: '25px',
+                            alignSelf: 'end',
+                            verticalAlign: 'bottom',
                         }}
                     >
                         <Button
@@ -128,8 +142,7 @@ interface IProjectProps {
     name: string;
     code: string;
     live: string;
-    imagePC: string;
-    imageMob: string;
+    image: string;
     made: string[];
     description: string;
 }
