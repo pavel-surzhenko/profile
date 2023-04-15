@@ -71,7 +71,7 @@ export const TechStack: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '50px',
-                    my: { xs: '25px', sm: '100px' },
+                    mb: { xs: 4, sm: 12 },
                     flexDirection: { xs: 'column', sm: 'row' },
                 }}
             >

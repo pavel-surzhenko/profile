@@ -126,7 +126,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
                             justifyContent: 'center',
                             width: { xs: '90%', sm: '75%' },
                             m: '0 auto',
-                            gap: '25px',
+                            gap: 6,
                             alignSelf: 'end',
                             verticalAlign: 'bottom',
                         }}
