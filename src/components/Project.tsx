@@ -13,6 +13,15 @@ import { NavLink } from 'react-router-dom';
 
 export const Project: React.FC<IProjectProps> = (props) => {
     const [elevation, setElevation] = useState(2);
+    const [showMore, setShowMore] = useState(false);
+    const SHORT_TEXT = 70;
+
+    const trimText = (text: string, length: number, end = '...'): string => {
+        let index = text.indexOf(' ', length);
+        if (index == -1) return text;
+        return text.slice(0, index) + end;
+    };
+
     const madeWithJSX = props.made.map((item) => (
         <Image
             width='35px'
@@ -27,7 +36,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
         <Grid
             item
             sm={6}
-            md={4}
+            lg={4}
             xs={12}
         >
             <Paper
@@ -40,6 +49,8 @@ export const Project: React.FC<IProjectProps> = (props) => {
                     transition: 'all 0.3s linear',
                     boxShadow: '0 3px 3px 2px rgba(229, 9, 20, 0.200)',
                     height: '100%',
+                    width: { xs: '80%', sm: '100%' },
+                    m: '0 auto',
                 }}
                 onMouseEnter={() => setElevation(6)}
                 onMouseLeave={() => setElevation(2)}
@@ -81,8 +92,9 @@ export const Project: React.FC<IProjectProps> = (props) => {
                         <Box
                             sx={{
                                 display: 'flex',
-                                gap: '10px',
+                                gap: { xs: '10px', sm: '5px', lg: '10px' },
                                 textAlign: 'center',
+                                alignItems: 'center',
                             }}
                         >
                             Made with:{madeWithJSX}
@@ -92,9 +104,21 @@ export const Project: React.FC<IProjectProps> = (props) => {
                         variant='subtitle1'
                         color='text.secondary'
                         pb={2}
-                        sx={{ flex: '1' }}
+                        sx={{ flex: '1', lineClamp: '2', display: 'box' }}
                     >
-                        {props.description}
+                        {showMore
+                            ? props.description
+                            : trimText(props.description, SHORT_TEXT)}
+                        {props.description.length > 70 && (
+                            <Button
+                                size='small'
+                                onClick={() => setShowMore(!showMore)}
+                                sx={{ ml: 1 }}
+                                color='error'
+                            >
+                                {showMore ? 'Show less' : 'Show more'}
+                            </Button>
+                        )}
                     </Typography>
                     <Box
                         sx={{
