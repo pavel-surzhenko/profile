@@ -43,7 +43,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
                 elevation={elevation}
                 sx={{
                     '&:hover': {
-                        transform: 'scale(1.1)',
+                        transform: 'scale(1.05)',
                         boxShadow: '0 4px 4px 3px rgba(229, 9, 20, 0.461)',
                     },
                     transition: 'all 0.3s linear',
@@ -104,17 +104,17 @@ export const Project: React.FC<IProjectProps> = (props) => {
                         variant='subtitle1'
                         color='text.secondary'
                         pb={2}
-                        sx={{ flex: '1', lineClamp: '2', display: 'box' }}
+                        sx={{ flex: '1' }}
                     >
                         {showMore
-                            ? props.description
+                            ? props.description + ' '
                             : trimText(props.description, SHORT_TEXT)}
                         {props.description.length > 70 && (
                             <Button
                                 size='small'
                                 onClick={() => setShowMore(!showMore)}
-                                sx={{ ml: 1 }}
                                 color='error'
+                                sx={{ fontSize: { xs: '10px', sm: '13px' } }}
                             >
                                 {showMore ? 'Show less' : 'Show more'}
                             </Button>
@@ -124,7 +124,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
                         sx={{
                             display: 'flex',
                             justifyContent: 'center',
-                            width: '75%',
+                            width: { xs: '90%', sm: '75%' },
                             m: '0 auto',
                             gap: '25px',
                             alignSelf: 'end',

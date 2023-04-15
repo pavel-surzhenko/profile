@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Project } from './Project';
@@ -6,16 +6,19 @@ import data from '../data/data.json';
 
 export const ProjectList: React.FC = () => {
     const [showNextText, setShowNextText] = useState(false);
+    const [showMore, setShowMore] = useState(3);
 
-    const projectsJSX: JSX.Element[] = data.projects.map((project) => (
-        <Project
-            key={project.name}
-            {...project}
-        />
-    ));
+    const projectsJSX: JSX.Element[] = data.projects
+        .slice(0, showMore)
+        .map((project) => (
+            <Project
+                key={project.name}
+                {...project}
+            />
+        ));
 
     return (
-        <Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography
                 variant='h3'
                 textAlign='center'
@@ -35,6 +38,19 @@ export const ProjectList: React.FC = () => {
                     {projectsJSX}
                 </Grid>
             )}
+            <Button
+                variant='outlined'
+                color='secondary'
+                sx={{ alignSelf: 'center', mt: 5 }}
+                onClick={() =>
+                    showMore >= data.projects.length
+                        ? setShowMore(3)
+                        : setShowMore(showMore + 3)
+                }
+                size='large'
+            >
+                {showMore >= data.projects.length ? 'Show Less' : 'Show More'}
+            </Button>
         </Box>
     );
 };

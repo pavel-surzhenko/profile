@@ -29,6 +29,9 @@ export let theme: Theme = createTheme({
             primary: 'rgba(229, 9, 20, 1)',
             secondary: 'rgba(255, 255, 255, 1)'
         },
+        secondary: {
+            main: '#ffffff',
+        },
     },
 });
 
