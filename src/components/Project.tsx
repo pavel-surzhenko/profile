@@ -135,24 +135,30 @@ export const Project: React.FC<IProjectProps> = (props) => {
                             variant='outlined'
                             component={NavLink}
                             to={props.code}
-                            sx={{ color: 'text.primary' }}
+                            sx={{ color: 'text.secondary' }}
                             color='error'
                             size='large'
                             target='_blank'
                         >
-                            <GitHub sx={{ pr: '5px' }} />
+                            <GitHub
+                                color='secondary'
+                                sx={{ pr: '5px' }}
+                            />
                             Code
                         </Button>
                         <Button
                             variant='outlined'
                             component={NavLink}
                             to={props.live}
-                            sx={{ color: 'text.primary' }}
+                            sx={{ color: 'text.secondary' }}
                             color='error'
                             size='large'
                             target='_blank'
                         >
-                            <WebAsset sx={{ pr: '5px' }} />
+                            <WebAsset
+                                color='secondary'
+                                sx={{ pr: '5px' }}
+                            />
                             Demo
                         </Button>
                     </Box>
