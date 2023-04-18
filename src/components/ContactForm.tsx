@@ -1,16 +1,45 @@
 import { Typography, Box, TextField, Stack, Button } from '@mui/material';
-import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+    name: yup.string().min(2).required(),
+    email: yup
+        .string()
+        .matches(
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+        .required(),
+    message: yup.string().min(10).required(),
+});
 
 export const ContactForm: React.FC = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const {
+        register,
+        handleSubmit,
+        trigger,
+        setValue,
+        formState: { errors, isValid },
+    } = useForm<FormData>({
+        mode: 'all',
+        resolver: yupResolver(schema),
+        reValidateMode: 'onChange',
+    });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const isFormValid = (): boolean => !isValid;
 
-        console.log(name, email, message);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        trigger(event.target.name as keyof FormData);
+        setValue(event.target.name as keyof FormData, event.target.value, {
+            shouldValidate: true,
+            shouldDirty: true,
+            shouldTouch: true,
+        });
     };
+
+    const onSubmit = handleSubmit((data: FormData) => console.log(data));
+
     return (
         <Box
             pt={4}
@@ -23,36 +52,33 @@ export const ContactForm: React.FC = () => {
             >
                 Say Hi
             </Typography>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
                 <Stack spacing={4}>
                     <TextField
-                        type='text'
+                        {...register('name')}
+                        error={!!errors.name}
                         color='secondary'
                         label='Name'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleChange}
                         sx={{ input: { color: 'secondary.main' } }}
-                        required
                     ></TextField>
                     <TextField
-                        type='email'
+                        {...register('email')}
+                        error={!!errors.email}
                         color='secondary'
                         label='Email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleChange}
                         sx={{ input: { color: 'secondary.main' } }}
-                        required
                     ></TextField>
                     <TextField
-                        type='text'
+                        {...register('message')}
+                        error={!!errors.message}
                         color='secondary'
                         label='Message'
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={handleChange}
                         sx={{ textarea: { color: 'secondary.main' } }}
                         multiline
                         rows={4}
-                        required
                     ></TextField>
                 </Stack>
                 <Button
@@ -61,6 +87,7 @@ export const ContactForm: React.FC = () => {
                     size='large'
                     color='secondary'
                     sx={{ mt: 4 }}
+                    disabled={isFormValid()}
                 >
                     Send
                 </Button>
@@ -68,3 +95,5 @@ export const ContactForm: React.FC = () => {
         </Box>
     );
 };
+
+type FormData = yup.InferType<typeof schema>;
