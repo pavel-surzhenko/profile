@@ -4,19 +4,24 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
-const getPaperStyles = () => ({
+const getPaperStyles = (hover: boolean) => ({
     px: 2,
     py: 4,
     flex: '1 1 25%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    color: 'secondary.main',
+    color: hover ? 'primary.main' : 'secondary.main',
     gap: '20px',
+    transition: 'all 0.5s',
+    '.MuiTypography-root': { transition: 'all 0.5s' },
 });
 
 export const Contacts: React.FC = () => {
     const [showNextText, setShowNextText] = useState(false);
+    const [hoverEmail, setHoverEmail] = useState(false);
+    const [hoverGit, setHoverGit] = useState(false);
+    const [hoverLinkedin, setHoverLinkedin] = useState(false);
 
     return (
         <Box>
@@ -40,7 +45,7 @@ export const Contacts: React.FC = () => {
                         flexDirection: { xs: 'column', sm: 'row' },
                     }}
                 >
-                    <Paper sx={getPaperStyles()}>
+                    <Paper sx={getPaperStyles(hoverEmail)}>
                         <Email sx={{ fontSize: '80px' }} />
                         <Typography variant='h5'>Email</Typography>
                         <Typography variant='h5'>
@@ -49,12 +54,14 @@ export const Contacts: React.FC = () => {
                                 to='mailto:pavel.surzhenko@icloud.com'
                                 color='secondary'
                                 underline='hover'
+                                onMouseEnter={() => setHoverEmail(true)}
+                                onMouseLeave={() => setHoverEmail(false)}
                             >
                                 pavel.surzhenko@icloud.com
                             </Link>
                         </Typography>
                     </Paper>
-                    <Paper sx={getPaperStyles()}>
+                    <Paper sx={getPaperStyles(hoverGit)}>
                         <GitHub sx={{ fontSize: '80px' }} />
                         <Typography variant='h5'>GitHub</Typography>
                         <Typography variant='h5'>
@@ -64,12 +71,14 @@ export const Contacts: React.FC = () => {
                                 target='_blank'
                                 color='secondary'
                                 underline='hover'
+                                onMouseEnter={() => setHoverGit(true)}
+                                onMouseLeave={() => setHoverGit(false)}
                             >
                                 pavel-surzhenko
                             </Link>
                         </Typography>
                     </Paper>
-                    <Paper sx={getPaperStyles()}>
+                    <Paper sx={getPaperStyles(hoverLinkedin)}>
                         <LinkedIn sx={{ fontSize: '80px' }} />
                         <Typography variant='h5'>LinkedIn</Typography>
                         <Typography variant='h5'>
@@ -79,6 +88,8 @@ export const Contacts: React.FC = () => {
                                 target='_blank'
                                 color='secondary'
                                 underline='hover'
+                                onMouseEnter={() => setHoverLinkedin(true)}
+                                onMouseLeave={() => setHoverLinkedin(false)}
                             >
                                 pavlo-surzhenko
                             </Link>
