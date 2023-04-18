@@ -1,5 +1,5 @@
 import { Container } from '@mui/material';
-import { Contacts } from '../components';
+import { ContactForm, Contacts } from '../components';
 
 export const ContactsPage: React.FC = () => {
     return (
@@ -8,6 +8,7 @@ export const ContactsPage: React.FC = () => {
             sx={{ flex: '1 0 auto', my: 6 }}
         >
             <Contacts />
+            <ContactForm />
         </Container>
     );
 };
