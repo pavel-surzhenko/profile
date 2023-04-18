@@ -1,7 +1,11 @@
 import { Typography, Box, TextField, Stack, Button } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import emailjs from '@emailjs/browser';
+import { Send, TroubleshootSharp } from '@mui/icons-material';
+import { useState } from 'react';
 
 const schema = yup.object().shape({
     name: yup.string().min(2).required(),
@@ -15,6 +19,8 @@ const schema = yup.object().shape({
 });
 
 export const ContactForm: React.FC = () => {
+    const [loading, setLoading] = useState(false);
+    const [sendStatus, setSendStatus] = useState('Send');
     const {
         register,
         handleSubmit,
@@ -38,7 +44,24 @@ export const ContactForm: React.FC = () => {
         });
     };
 
-    const onSubmit = handleSubmit((data: FormData) => console.log(data));
+    const onSubmit = handleSubmit((data: FormData) => {
+        setLoading(true);
+        emailjs
+            .sendForm(
+                'service_avjr0ze',
+                'template_4357xjz',
+                '#contact-form',
+                'Fh9klGWCj6UrF5qHb'
+            )
+            .then(() => {
+                setLoading(false);
+                setSendStatus('success');
+            })
+            .catch((error: unknown) => {
+                setLoading(false);
+                setSendStatus('failed');
+            });
+    });
 
     return (
         <Box
@@ -52,7 +75,10 @@ export const ContactForm: React.FC = () => {
             >
                 Say Hi
             </Typography>
-            <form onSubmit={onSubmit}>
+            <form
+                id='contact-form'
+                onSubmit={onSubmit}
+            >
                 <Stack spacing={4}>
                     <TextField
                         {...register('name')}
@@ -81,16 +107,30 @@ export const ContactForm: React.FC = () => {
                         rows={4}
                     ></TextField>
                 </Stack>
-                <Button
+                <LoadingButton
                     type='submit'
                     variant='outlined'
                     size='large'
-                    color='secondary'
-                    sx={{ mt: 4 }}
-                    disabled={isFormValid()}
+                    color={
+                        sendStatus === 'success'
+                            ? 'success'
+                            : sendStatus === 'failed'
+                            ? 'error'
+                            : 'secondary'
+                    }
+                    sx={{
+                        mt: 4,
+                        '&.Mui-disabled': {
+                            color: sendStatus === 'success' ? '#2e7d32' : '',
+                        },
+                    }}
+                    disabled={isFormValid() || sendStatus === 'success'}
+                    endIcon={<Send />}
+                    loading={loading}
+                    loadingPosition='end'
                 >
-                    Send
-                </Button>
+                    {sendStatus}
+                </LoadingButton>
             </form>
         </Box>
     );
