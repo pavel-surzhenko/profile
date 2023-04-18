@@ -31,59 +31,61 @@ export const Contacts: React.FC = () => {
                     speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
                 />
             </Typography>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    gap: 3,
-                    flexDirection: { xs: 'column', sm: 'row' },
-                }}
-            >
-                <Paper sx={getPaperStyles()}>
-                    <Email sx={{ fontSize: '80px' }} />
-                    <Typography variant='h5'>Email</Typography>
-                    <Typography variant='h5'>
-                        <Link
-                            component={NavLink}
-                            to='mailto:pavel.surzhenko@icloud.com'
-                            color='secondary'
-                            underline='hover'
-                        >
-                            pavel.surzhenko@icloud.com
-                        </Link>
-                    </Typography>
-                </Paper>
-                <Paper sx={getPaperStyles()}>
-                    <GitHub sx={{ fontSize: '80px' }} />
-                    <Typography variant='h5'>GitHub</Typography>
-                    <Typography variant='h5'>
-                        <Link
-                            component={NavLink}
-                            to='https://github.com/pavel-surzhenko'
-                            target='_blank'
-                            color='secondary'
-                            underline='hover'
-                        >
-                            pavel-surzhenko
-                        </Link>
-                    </Typography>
-                </Paper>
-                <Paper sx={getPaperStyles()}>
-                    <LinkedIn sx={{ fontSize: '80px' }} />
-                    <Typography variant='h5'>LinkedIn</Typography>
-                    <Typography variant='h5'>
-                        <Link
-                            component={NavLink}
-                            to='https://www.linkedin.com/in/pavlo-surzhenko/'
-                            target='_blank'
-                            color='secondary'
-                            underline='hover'
-                        >
-                            pavlo-surzhenko
-                        </Link>
-                    </Typography>
-                </Paper>
-            </Box>
+            {showNextText && (
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        gap: 3,
+                        flexDirection: { xs: 'column', sm: 'row' },
+                    }}
+                >
+                    <Paper sx={getPaperStyles()}>
+                        <Email sx={{ fontSize: '80px' }} />
+                        <Typography variant='h5'>Email</Typography>
+                        <Typography variant='h5'>
+                            <Link
+                                component={NavLink}
+                                to='mailto:pavel.surzhenko@icloud.com'
+                                color='secondary'
+                                underline='hover'
+                            >
+                                pavel.surzhenko@icloud.com
+                            </Link>
+                        </Typography>
+                    </Paper>
+                    <Paper sx={getPaperStyles()}>
+                        <GitHub sx={{ fontSize: '80px' }} />
+                        <Typography variant='h5'>GitHub</Typography>
+                        <Typography variant='h5'>
+                            <Link
+                                component={NavLink}
+                                to='https://github.com/pavel-surzhenko'
+                                target='_blank'
+                                color='secondary'
+                                underline='hover'
+                            >
+                                pavel-surzhenko
+                            </Link>
+                        </Typography>
+                    </Paper>
+                    <Paper sx={getPaperStyles()}>
+                        <LinkedIn sx={{ fontSize: '80px' }} />
+                        <Typography variant='h5'>LinkedIn</Typography>
+                        <Typography variant='h5'>
+                            <Link
+                                component={NavLink}
+                                to='https://www.linkedin.com/in/pavlo-surzhenko/'
+                                target='_blank'
+                                color='secondary'
+                                underline='hover'
+                            >
+                                pavlo-surzhenko
+                            </Link>
+                        </Typography>
+                    </Paper>
+                </Box>
+            )}
         </Box>
     );
 };
