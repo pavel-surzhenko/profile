@@ -14,7 +14,7 @@ import emailjs from '@emailjs/browser';
 import { Send } from '@mui/icons-material';
 import { useState } from 'react';
 import Image from 'mui-image';
-import contactImage from '../assets/image/contact.svg';
+import contactImage from '/image/contact.svg';
 
 const schema = yup.object().shape({
     name: yup.string().min(2).required(),

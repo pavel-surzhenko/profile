@@ -8,7 +8,7 @@ import {
 import Image from 'mui-image';
 import data from '../data/data.json';
 import { TypeAnimation } from 'react-type-animation';
-import image from '../assets/image/skills.svg';
+import image from '/image/skills.svg';
 import { useState } from 'react';
 
 export const TechStack: React.FC = () => {
@@ -33,7 +33,7 @@ export const TechStack: React.FC = () => {
             {showNextText && (
                 <>
                     <Image
-                        src={'../../'}
+                        src={skill.icon}
                         fit='contain'
                         duration={1000}
                         shift='top'

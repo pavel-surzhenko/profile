@@ -2,63 +2,63 @@
     "icons": [
         {
             "name": "html5",
-            "icon": "assets/icons/html5.svg"
+            "icon": "/icons/html5.svg"
         },
         {
             "name": "css3",
-            "icon": "../src/assets/icons/css3.svg"
+            "icon": "/icons/css3.svg"
         },
         {
             "name": "javascript",
-            "icon": "../../assets/icons/javascript.svg"
+            "icon": "/icons/javascript.svg"
         },
         {
             "name": "typescript",
-            "icon": "..src/assets/icons/typescript.svg"
+            "icon": "/icons/typescript.svg"
         },
         {
             "name": "react",
-            "icon": "~/src/assets/icons/react.svg"
+            "icon": "/icons/react.svg"
         },
         {
             "name": "redux",
-            "icon": "./src/assets/icons/redux.svg"
+            "icon": "/icons/redux.svg"
         },
         {
             "name": "mobX",
-            "icon": "src/assets/icons/mobx.svg"
+            "icon": "/icons/mobx.svg"
         },
         {
             "name": "sass",
-            "icon": "src/assets/icons/sass.svg"
+            "icon": "/icons/sass.svg"
         },
         {
             "name": "bootstrap",
-            "icon": "src/assets/icons/bootstrap.svg"
+            "icon": "/icons/bootstrap.svg"
         },
         {
             "name": "material-ui",
-            "icon": "src/assets/icons/material-ui.svg"
+            "icon": "/icons/material-ui.svg"
         },
         {
             "name": "jQuery",
-            "icon": "src/assets/icons/jquery.svg"
+            "icon": "/icons/jquery.svg"
         },
         {
             "name": "git",
-            "icon": "src/assets/icons/git.svg"
+            "icon": "/icons/git.svg"
         },
         {
             "name": "github",
-            "icon": "src/assets/icons/github.svg"
+            "icon": "/icons/github.svg"
         },
         {
             "name": "gitlab",
-            "icon": "src/assets/icons/gitlab.svg"
+            "icon": "/icons/gitlab.svg"
         },
         {
             "name": "figma",
-            "icon": "src/assets/icons/figma.svg"
+            "icon": "/icons/figma.svg"
         }
     ],
     "projects": [
@@ -66,116 +66,116 @@
             "name": "Web Store",
             "code": "https://github.com/pavel-surzhenko/e-shop",
             "live": "https://pavel-surzhenko.github.io/e-shop/",
-            "image": "src/assets/image/projects/webStore.png",
+            "image": "/image/projects/webStore.png",
             "description": "This is my project 'Web Store'. Has full functionality such as product filter, search by name, sorting, shopping cart and checkout page with data validation. Using FakeStore API",
             "made": [
-                "src/assets/icons/typescript.svg",
-                "src/assets/icons/react.svg",
-                "src/assets/icons/redux.svg",
-                "src/assets/icons/material-ui.svg"
+                "/icons/typescript.svg",
+                "/icons/react.svg",
+                "/icons/redux.svg",
+                "/icons/material-ui.svg"
             ]
         },
         {
             "name": "My Blog",
             "code": "https://github.com/pavel-surzhenko/react-app-blog",
             "live": "https://pavel-surzhenko.github.io/react-app-blog/#/feed",
-            "image": "src/assets/image/projects/myBlog.png",
+            "image": "/image/projects/myBlog.png",
             "description": "My study project 'My Blog'. The site has many pages such as login/auth page with validation, wall, profile page and comments. The user can write a post, comment on other posts, like, delete posts, change name and password.",
             "made": [
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/react.svg",
-                "src/assets/icons/redux.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/javascript.svg",
+                "/icons/react.svg",
+                "/icons/redux.svg",
+                "/icons/sass.svg"
             ]
         },
         {
             "name": "Organizer",
             "code": "https://github.com/pavel-surzhenko/organizer-react-app",
             "live": "https://pavel-surzhenko.github.io/organizer-react-app/#/login",
-            "image": "src/assets/image/projects/organizer.png",
+            "image": "/image/projects/organizer.png",
             "description": "It is my study project 'Organizer'.Has standard functionality such as creating a task, editing, marking as completed and deleting. Fields also have validation. There is an authorization/registration page",
             "made": [
-                "src/assets/icons/typescript.svg",
-                "src/assets/icons/react.svg",
-                "src/assets/icons/redux.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/typescript.svg",
+                "/icons/react.svg",
+                "/icons/redux.svg",
+                "/icons/sass.svg"
             ]
         },
         {
             "name": "Weather",
             "code": "https://github.com/pavel-surzhenko/weather-react-app",
             "live": "https://pavel-surzhenko.github.io/weather-react-app/",
-            "image": "src/assets/image/projects/weather.png",
+            "image": "/image/projects/weather.png",
             "description": "The weather app shows the weather forecast for 7 days. By default, the weather for today is selected, but the user has the ability to switch the day by clicking on another day at the bottom of the page. The application can filter days according to specified criteria.",
             "made": [
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/react.svg",
-                "src/assets/icons/mobx.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/javascript.svg",
+                "/icons/react.svg",
+                "/icons/mobx.svg",
+                "/icons/sass.svg"
             ]
         },
         {
             "name": "English School",
             "code": "https://github.com/pavel-surzhenko/catch-up_app",
             "live": "https://pavel-surzhenko.github.io/catch-up_app/",
-            "image": "src/assets/image/projects/englishSchool.png",
+            "image": "/image/projects/englishSchool.png",
             "description": "Web app for English School. It has a registration/login form and two different pages depending on the role, student or teacher where user can sign up for lessons, check the schedule, leave feedback.",
             "made": [
-                "src/assets/icons/html5.svg",
-                "src/assets/icons/css3.svg",
-                "src/assets/icons/javascript.svg"
+                "/icons/html5.svg",
+                "/icons/css3.svg",
+                "/icons/javascript.svg"
             ]
         },
         {
             "name": "Web site 'Danfoss'",
             "code": "https://github.com/pavel-surzhenko/test-site",
             "live": "https://pavel-surzhenko.github.io/test-site/",
-            "image": "src/assets/image/projects/webpage.png",
+            "image": "/image/projects/webpage.png",
             "description": "A site for repair and service of equipment. The site contains various animations, slides and forms. Also uses google maps",
             "made": [
-                "src/assets/icons/html5.svg",
-                "src/assets/icons/css3.svg",
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/jquery.svg"
+                "/icons/html5.svg",
+                "/icons/css3.svg",
+                "/icons/javascript.svg",
+                "/icons/jquery.svg"
             ]
         },
         {
             "name": "Landing page 'Yoga'",
             "code": "https://github.com/pavel-surzhenko/yoga",
             "live": "https://pavel-surzhenko.github.io/yoga/",
-            "image": "src/assets/image/projects/yoga.png",
+            "image": "/image/projects/yoga.png",
             "description": "Landing page for Yoga classes. Full responsive and adaptive with css animations and gallery",
             "made": [
-                "src/assets/icons/html5.svg",
-                "src/assets/icons/css3.svg",
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/html5.svg",
+                "/icons/css3.svg",
+                "/icons/javascript.svg",
+                "/icons/sass.svg"
             ]
         },
         {
             "name": "Web site 'Gusto'",
             "code": "https://github.com/pavel-surzhenko/gusto",
             "live": "https://pavel-surzhenko.github.io/gusto/",
-            "image": "src/assets/image/projects/gusto.png",
+            "image": "/image/projects/gusto.png",
             "description": "Restaurant 'Gusto' web site. Fully responsive site with table reservation form and menu. There is also CSS animation and a slider",
             "made": [
-                "src/assets/icons/html5.svg",
-                "src/assets/icons/css3.svg",
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/html5.svg",
+                "/icons/css3.svg",
+                "/icons/javascript.svg",
+                "/icons/sass.svg"
             ]
         },
         {
             "name": "Landing page 'Relvise'",
             "code": "https://github.com/pavel-surzhenko/Relvise",
             "live": "https://pavel-surzhenko.github.io/Relvise/",
-            "image": "src/assets/image/projects/relvise.png",
+            "image": "/image/projects/relvise.png",
             "description": "Ful responsive landing page with some animations, slider and forms.",
             "made": [
-                "src/assets/icons/html5.svg",
-                "src/assets/icons/css3.svg",
-                "src/assets/icons/javascript.svg",
-                "src/assets/icons/sass.svg"
+                "/icons/html5.svg",
+                "/icons/css3.svg",
+                "/icons/javascript.svg",
+                "/icons/sass.svg"
             ]
         }
     ]

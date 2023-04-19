@@ -1,6 +1,6 @@
 import { Box, Card, CardMedia, Typography } from '@mui/material';
 import { TypeAnimation } from 'react-type-animation';
-import image from '../assets/image/home.svg';
+import image from '/image/home.svg';
 import { useState } from 'react';
 
 export const About: React.FC = () => {

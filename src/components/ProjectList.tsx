@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Project } from './Project';
 import data from '../data/data.json';
-import image from '../assets/image/project.svg';
+import image from '/image/project.svg';
 
 export const ProjectList: React.FC = () => {
     const [showNextText, setShowNextText] = useState(false);
