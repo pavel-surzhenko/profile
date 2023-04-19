@@ -3,7 +3,7 @@ import { Box, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
+// import 'react-pdf/dist/esm/Page/TextLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const resumeLink =
@@ -42,7 +42,7 @@ export const Resume: React.FC = () => {
             </Button>
             <Document
                 file={resumeLink}
-                renderMode='svg'
+                renderMode='canvas'
                 onLoadSuccess={() => setIsLoadSuccess(true)}
                 options={{
                     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
