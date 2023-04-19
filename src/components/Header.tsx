@@ -48,13 +48,7 @@ export const Header: React.FC = () => {
                     >
                         <ListItemButton
                             component={NavLink}
-                            to={
-                                item === 'home'
-                                    ? '/'
-                                    : item === 'resume'
-                                    ? 'https://drive.google.com/uc?export=download&id=1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL'
-                                    : item
-                            }
+                            to={item === 'home' ? '/' : item}
                             sx={{
                                 textAlign: 'center',
                                 '&.active': {
@@ -108,13 +102,7 @@ export const Header: React.FC = () => {
                             <Button
                                 component={NavLink}
                                 key={item}
-                                to={
-                                    item === 'home'
-                                        ? '/'
-                                        : item === 'resume'
-                                        ? 'https://drive.google.com/uc?export=download&id=1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL'
-                                        : item
-                                }
+                                to={item === 'home' ? '/' : item}
                                 sx={{
                                     color: 'text.primary',
                                     '&.active': {
@@ -153,3 +141,6 @@ export const Header: React.FC = () => {
         </Box>
     );
 };
+
+// https://drive.google.com/file/d/1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL/view
+// https://drive.google.com/uc?export=download&id=1apJwYKFQnC_6m__wxhyRYDjpYUUXYNVL
