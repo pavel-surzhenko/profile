@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 const getPaperStyles = (hover: boolean) => ({
     px: 2,
     py: 4,
-    flex: '1 1 25%',
+    flex: '0 0 33.33%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -49,7 +49,7 @@ export const Contacts: React.FC<ContactProps> = ({ onComplete }) => {
                         display: 'flex',
                         justifyContent: 'space-between',
                         gap: 3,
-                        flexDirection: { xs: 'column', sm: 'row' },
+                        flexDirection: { xs: 'column', md: 'row' },
                     }}
                 >
                     <Paper sx={getPaperStyles(hoverEmail)}>

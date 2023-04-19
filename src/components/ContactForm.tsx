@@ -92,7 +92,7 @@ export const ContactForm: React.FC = () => {
                 sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    flexDirection: { xs: 'column', sm: 'row' },
+                    flexDirection: { xs: 'column', md: 'row' },
                 }}
             >
                 <Form

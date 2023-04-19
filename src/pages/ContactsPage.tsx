@@ -9,7 +9,7 @@ export const ContactsPage: React.FC = () => {
     return (
         <Container
             maxWidth='xl'
-            sx={{ flex: '1 0 auto', my: 6 }}
+            sx={{ flex: '1 0 auto', my: 6, mx: 'auto' }}
         >
             <Contacts onComplete={setVisible} />
             {isVisible && <ContactForm />}
