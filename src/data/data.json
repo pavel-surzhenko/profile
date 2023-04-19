@@ -2,7 +2,7 @@
     "icons": [
         {
             "name": "html5",
-            "icon": "src/assets/icons/html5.svg"
+            "icon": "../assets/icons/html5.svg"
         },
         {
             "name": "css3",
