@@ -29,8 +29,8 @@ export const Resume: React.FC = () => {
                 maxWidth: '100%',
                 '& canvas': {
                     maxWidth: '100%',
-                    height: 'auto !important'
-                }
+                    height: 'auto !important',
+                },
             }}
         >
             <Button
@@ -42,6 +42,7 @@ export const Resume: React.FC = () => {
             </Button>
             <Document
                 file={resumeLink}
+                renderMode='svg'
                 onLoadSuccess={() => setIsLoadSuccess(true)}
                 options={{
                     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
