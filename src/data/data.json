@@ -6,15 +6,15 @@
         },
         {
             "name": "css3",
-            "icon": "src/assets/icons/css3.svg"
+            "icon": "./assets/icons/css3.svg"
         },
         {
             "name": "javascript",
-            "icon": "src/assets/icons/javascript.svg"
+            "icon": "../assets/icons/javascript.svg"
         },
         {
             "name": "typescript",
-            "icon": "src/assets/icons/typescript.svg"
+            "icon": "..src/assets/icons/typescript.svg"
         },
         {
             "name": "react",
