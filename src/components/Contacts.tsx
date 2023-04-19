@@ -29,7 +29,7 @@ export const Contacts: React.FC<ContactProps> = ({ onComplete }) => {
                 variant='h3'
                 color='text.secondary'
                 textAlign='center'
-                pb={6}
+                sx={{ pb: { sm: 6, xs: 3 } }}
             >
                 <TypeAnimation
                     sequence={[

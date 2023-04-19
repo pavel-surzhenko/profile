@@ -84,7 +84,7 @@ export const ContactForm: React.FC = () => {
             <Typography
                 variant='h4'
                 textAlign='center'
-                pb={6}
+                sx={{ pb: { sm: 6, xs: 3 } }}
             >
                 Say Hi
             </Typography>

@@ -54,7 +54,7 @@ export const About: React.FC = () => {
                         maxWidth: { xs: '90%', sm: '75%' },
                         opacity: showNextText ? 1 : 0,
                         transition: 'opacity 0.5s ease-in-out 0.7s',
-                        mt: 6,
+                        mt: { xs: 4, md: 6 },
                     }}
                 >
                     I fell in love with programming and I have at least learned

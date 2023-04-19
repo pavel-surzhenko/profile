@@ -24,7 +24,7 @@ export const ProjectList: React.FC = () => {
                 variant='h3'
                 textAlign='center'
                 color='text.secondary'
-                pb={6}
+                sx={{ pb: { sm: 6, xs: 3 } }}
             >
                 <TypeAnimation
                     sequence={[200, 'My projects', () => setShowNextText(true)]}
