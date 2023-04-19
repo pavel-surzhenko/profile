@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 const getPaperStyles = (hover: boolean) => ({
     px: 2,
     py: 4,
-    flex: '0 0 33.33%',
+    flex: '1 1 30%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

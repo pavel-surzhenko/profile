@@ -25,6 +25,7 @@ export const Project: React.FC<IProjectProps> = (props) => {
     const madeWithJSX = props.made.map((item) => (
         <Image
             width='35px'
+            key={item}
             src={item}
             sx={{
                 '&:hover': { transform: 'scale(1.2)' },
