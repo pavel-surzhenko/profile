@@ -6,11 +6,11 @@
         },
         {
             "name": "css3",
-            "icon": "./assets/icons/css3.svg"
+            "icon": "../src/assets/icons/css3.svg"
         },
         {
             "name": "javascript",
-            "icon": "../assets/icons/javascript.svg"
+            "icon": "../../assets/icons/javascript.svg"
         },
         {
             "name": "typescript",
@@ -22,7 +22,7 @@
         },
         {
             "name": "redux",
-            "icon": "src/assets/icons/redux.svg"
+            "icon": "./src/assets/icons/redux.svg"
         },
         {
             "name": "mobX",

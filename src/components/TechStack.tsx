@@ -33,7 +33,7 @@ export const TechStack: React.FC = () => {
             {showNextText && (
                 <>
                     <Image
-                        src={skill.icon}
+                        src={'../../'}
                         fit='contain'
                         duration={1000}
                         shift='top'
