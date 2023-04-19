@@ -21,6 +21,16 @@ export let theme: Theme = createTheme({
                     }
                 }
             }
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                input: {
+                    '&:-webkit-autofill': {
+                        WebkitBoxShadow: '0 0 0 100px #121212 inset !important',
+                        WebkitTextFillColor: '#fff',
+                    },
+                }
+            }
         }
     },
     palette: {

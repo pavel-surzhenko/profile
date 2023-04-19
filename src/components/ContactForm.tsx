@@ -1,11 +1,20 @@
-import { Typography, Box, TextField, Stack, Button } from '@mui/material';
+import {
+    Typography,
+    Box,
+    TextField,
+    Stack,
+    CircularProgress,
+    styled,
+} from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
-import { Send, TroubleshootSharp } from '@mui/icons-material';
+import { Send } from '@mui/icons-material';
 import { useState } from 'react';
+import Image from 'mui-image';
+import contactImage from '../assets/image/contact.svg';
 
 const schema = yup.object().shape({
     name: yup.string().min(2).required(),
@@ -17,6 +26,10 @@ const schema = yup.object().shape({
         .required(),
     message: yup.string().min(10).required(),
 });
+
+const Form = styled('form')(() => ({
+    flex: '0 0 50%',
+}));
 
 export const ContactForm: React.FC = () => {
     const [loading, setLoading] = useState(false);
@@ -75,63 +88,80 @@ export const ContactForm: React.FC = () => {
             >
                 Say Hi
             </Typography>
-            <form
-                id='contact-form'
-                onSubmit={onSubmit}
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                }}
             >
-                <Stack spacing={4}>
-                    <TextField
-                        {...register('name')}
-                        error={!!errors.name}
-                        color='secondary'
-                        label='Name'
-                        onChange={handleChange}
-                        sx={{ input: { color: 'secondary.main' } }}
-                    ></TextField>
-                    <TextField
-                        {...register('email')}
-                        error={!!errors.email}
-                        color='secondary'
-                        label='Email'
-                        onChange={handleChange}
-                        sx={{ input: { color: 'secondary.main' } }}
-                    ></TextField>
-                    <TextField
-                        {...register('message')}
-                        error={!!errors.message}
-                        color='secondary'
-                        label='Message'
-                        onChange={handleChange}
-                        sx={{ textarea: { color: 'secondary.main' } }}
-                        multiline
-                        rows={4}
-                    ></TextField>
-                </Stack>
-                <LoadingButton
-                    type='submit'
-                    variant='outlined'
-                    size='large'
-                    color={
-                        sendStatus === 'success'
-                            ? 'success'
-                            : sendStatus === 'failed'
-                            ? 'error'
-                            : 'secondary'
-                    }
-                    sx={{
-                        mt: 4,
-                        '&.Mui-disabled': {
-                            color: sendStatus === 'success' ? '#2e7d32' : '',
-                        },
-                    }}
-                    disabled={isFormValid() || sendStatus === 'success'}
-                    endIcon={<Send />}
-                    loading={loading}
-                    loadingPosition='end'
+                <Form
+                    id='contact-form'
+                    onSubmit={onSubmit}
                 >
-                    {sendStatus}
-                </LoadingButton>
-            </form>
+                    <Stack spacing={4}>
+                        <TextField
+                            {...register('name')}
+                            error={!!errors.name}
+                            color='secondary'
+                            label='Name'
+                            onChange={handleChange}
+                            sx={{ input: { color: 'secondary.main' } }}
+                        ></TextField>
+                        <TextField
+                            {...register('email')}
+                            error={!!errors.email}
+                            color='secondary'
+                            label='Email'
+                            onChange={handleChange}
+                            sx={{ input: { color: 'secondary.main' } }}
+                        ></TextField>
+                        <TextField
+                            {...register('message')}
+                            error={!!errors.message}
+                            color='secondary'
+                            label='Message'
+                            onChange={handleChange}
+                            sx={{ textarea: { color: 'secondary.main' } }}
+                            multiline
+                            rows={4}
+                        ></TextField>
+                    </Stack>
+                    <LoadingButton
+                        type='submit'
+                        variant='outlined'
+                        size='large'
+                        color={
+                            sendStatus === 'success'
+                                ? 'success'
+                                : sendStatus === 'failed'
+                                ? 'error'
+                                : 'secondary'
+                        }
+                        sx={{
+                            mt: 4,
+                            '&.Mui-disabled': {
+                                color:
+                                    sendStatus === 'success' ? '#2e7d32' : '',
+                            },
+                        }}
+                        disabled={isFormValid() || sendStatus === 'success'}
+                        endIcon={<Send />}
+                        loading={loading}
+                        loadingPosition='end'
+                    >
+                        {sendStatus}
+                    </LoadingButton>
+                </Form>
+                <Image
+                    src={contactImage}
+                    fit='contain'
+                    duration={1000}
+                    shift='top'
+                    sx={{ maxWidth: '100%%', maxHeight: '100%' }}
+                    showLoading={<CircularProgress color='error' />}
+                />
+            </Box>
         </Box>
     );
 };

@@ -17,7 +17,7 @@ const getPaperStyles = (hover: boolean) => ({
     '.MuiTypography-root': { transition: 'all 0.5s' },
 });
 
-export const Contacts: React.FC = () => {
+export const Contacts: React.FC<ContactProps> = ({ onComplete }) => {
     const [showNextText, setShowNextText] = useState(false);
     const [hoverEmail, setHoverEmail] = useState(false);
     const [hoverGit, setHoverGit] = useState(false);
@@ -32,7 +32,14 @@ export const Contacts: React.FC = () => {
                 pb={6}
             >
                 <TypeAnimation
-                    sequence={[200, 'Contact me', () => setShowNextText(true)]}
+                    sequence={[
+                        200,
+                        'Contact me',
+                        () => {
+                            setShowNextText(true);
+                            onComplete();
+                        },
+                    ]}
                     speed={{ type: 'keyStrokeDelayInMs', value: 30 }}
                 />
             </Typography>
@@ -100,3 +107,6 @@ export const Contacts: React.FC = () => {
         </Box>
     );
 };
+interface ContactProps {
+    onComplete: () => void;
+}
