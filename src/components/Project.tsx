@@ -27,9 +27,6 @@ export const Project: React.FC<IProjectProps> = (props) => {
             width='35px'
             key={item}
             src={item}
-            sx={{
-                '&:hover': { transform: 'scale(1.2)' },
-            }}
         />
     ));
 
@@ -66,14 +63,16 @@ export const Project: React.FC<IProjectProps> = (props) => {
                 >
                     <Box
                         pb={2}
-                        sx={{ position: 'relative' }}
+                        sx={{
+                            position: 'relative',
+                        }}
                     >
                         <Image
                             fit='contain'
                             duration={1000}
                             shift='top'
                             src={props.image}
-                            sx={{ borderRadius: '4px' }}
+                            style={{ borderRadius: '4px' }}
                             showLoading={<CircularProgress color='error' />}
                         />
                     </Box>
@@ -96,6 +95,9 @@ export const Project: React.FC<IProjectProps> = (props) => {
                                 gap: { xs: '10px', sm: '5px', lg: '10px' },
                                 textAlign: 'center',
                                 alignItems: 'center',
+                                '& div > img': {
+                                    '&:hover': { transform: 'scale(1.2)' },
+                                },
                             }}
                         >
                             Made with:{madeWithJSX}

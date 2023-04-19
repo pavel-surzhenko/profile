@@ -158,7 +158,7 @@ export const ContactForm: React.FC = () => {
                     fit='contain'
                     duration={1000}
                     shift='top'
-                    sx={{ maxWidth: '100%%', maxHeight: '100%' }}
+                    style={{ maxWidth: '100%%', maxHeight: '100%' }}
                     showLoading={<CircularProgress color='error' />}
                 />
             </Box>

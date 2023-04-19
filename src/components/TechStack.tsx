@@ -20,6 +20,15 @@ export const TechStack: React.FC = () => {
             item
             xs={3}
             sm={3}
+            sx={{
+                '& img': {
+                    maxWidth: { xs: '75px', sm: '100px' },
+                    maxHeight: { xs: '75px', sm: '100px' },
+                    '&:hover': {
+                        transform: 'scale(1.2)',
+                    },
+                },
+            }}
         >
             {showNextText && (
                 <>
@@ -28,20 +37,14 @@ export const TechStack: React.FC = () => {
                         fit='contain'
                         duration={1000}
                         shift='top'
-                        sx={{
-                            maxWidth: { xs: '75px', sm: '100px' },
-                            maxHeight: { xs: '75px', sm: '100px' },
-                            '&:hover': {
-                                transform: 'scale(1.2)',
-                            },
-                        }}
                         showLoading={<CircularProgress color='error' />}
                     />
                     <Typography
                         textAlign='center'
                         color='text.secondary'
                         variant='subtitle1'
-                        py='5px'
+                        pb={2}
+                        mt={-1}
                     >
                         {skill.name}
                     </Typography>
@@ -77,7 +80,7 @@ export const TechStack: React.FC = () => {
                 <Box sx={{ flexBasis: '50%', order: { xs: '2', sm: '1' } }}>
                     {showNextText && (
                         <Image
-                            sx={{ maxHeight: '700px' }}
+                            style={{ maxHeight: '700px' }}
                             src={image}
                             fit='contain'
                             duration={1000}
