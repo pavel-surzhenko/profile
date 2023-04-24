@@ -12,7 +12,6 @@ const resumeLink =
 export const Resume: React.FC = () => {
     const [width, setWidth] = useState(1200);
     const [pageNumber, setPageNumber] = useState(1);
-    const [isLoadSuccess, setIsLoadSuccess] = useState(false);
 
     useEffect(() => {
         setWidth(window.innerWidth);
@@ -43,7 +42,6 @@ export const Resume: React.FC = () => {
             <Document
                 file={resumeLink}
                 renderMode='canvas'
-                onLoadSuccess={() => setIsLoadSuccess(true)}
                 options={{
                     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
                     cMapPacked: true,

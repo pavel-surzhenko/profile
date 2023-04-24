@@ -3,7 +3,6 @@ import {
     Typography,
     Grid,
     CircularProgress,
-    useTheme,
 } from '@mui/material';
 import Image from 'mui-image';
 import data from '../data/data.json';
@@ -22,8 +21,8 @@ export const TechStack: React.FC = () => {
             sm={3}
             sx={{
                 '& img': {
-                    maxWidth: { xs: '75px', sm: '100px' },
-                    maxHeight: { xs: '75px', sm: '100px' },
+                    maxWidth: { xs: '60px', sm: '100px' },
+                    maxHeight: { xs: '60px', sm: '100px' },
                     '&:hover': {
                         transform: 'scale(1.2)',
                     },
